@@ -11,8 +11,9 @@ return {
         { '<leader>cs', group = 'symbols' },
         { '<leader>cx', group = 'trouble' },
         { '<leader>t', group = 'telescope' },
-        { '<leader>o', group = 'obsidian', icon = { icon = '󰯂', hl = 'WhichKeyPurple', color = 'purple' } },
         { '<leader>b', group = 'buffer' },
+        { '<leader>o', group = 'obsidian', icon = { icon = '󰯂', hl = 'WhichKeyPurple', color = 'purple' } },
+        { '<leader>g', group = 'git', icon = { icon = '󰊢', hl = 'WhichKeyColorOrange', color = 'orange' } },
         {
           mode = { 'n', 'v' }, -- NORMAL and VISUAL mode
           { '<leader>q', '<cmd>q<cr>', desc = 'Quit' }, -- no need to specify mode since it's inherited
