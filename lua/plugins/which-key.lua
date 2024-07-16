@@ -16,6 +16,8 @@ return {
         {
           mode = { 'n', 'v' }, -- NORMAL and VISUAL mode
           { '<leader>q', '<cmd>q<cr>', desc = 'Quit' }, -- no need to specify mode since it's inherited
+          { '<leader>l', '<cmd>Lazy<cr>', desc = 'Lazy' },
+          { '<leader>s', '<cmd>w<CR>', desc = 'Save', icon = { icon = '󰆓', hl = 'WhichKeyYellow', color = 'yellow' } },
         },
       },
     },

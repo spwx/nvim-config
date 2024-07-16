@@ -53,8 +53,6 @@ vim.keymap.set('n', '<leader>bd', '<cmd>bd<CR>', { desc = 'Delete buffer' })
 vim.keymap.set('n', '<leader>bD', '<cmd>bd!<CR>', { desc = 'Force Delete buffer' })
 vim.keymap.set('n', '<leader>`', '<cmd>:b#<CR>', { desc = 'Last buffer' })
 
-vim.keymap.set('n', '<leader>s', '<cmd>w<CR>', { desc = 'Save' })
-
 -- windows
 vim.keymap.set('n', '<leader>wc', '<C-w>c', { desc = 'Close window' })
 vim.keymap.set('n', '<leader>wv', '<C-w>v', { desc = 'Create vsplit' })
