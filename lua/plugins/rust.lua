@@ -16,7 +16,55 @@ return {
             ui_select_fallback = true,
           },
         },
+        server = {
+          on_attach = function(client)
+            local wk = require 'which-key'
+            wk.add {
+              { '<leader>cr', group = 'rustaceanvim' },
+            }
+
+            -- you can also put keymaps in here
+            -- TODO: this isn't working
+            -- vim.cmd.RustLsp { 'flyCheck', 'run' }
+            -- TODO: Something is wrong with `ui_select_fallback`
+            -- vim.keymap.set('n', '<leader>ca', function()
+            --   vim.cmd.RustLsp 'codeAction' -- supports rust-analyzer's grouping
+            --   -- or vim.lsp.buf.codeAction() if you don't want grouping.
+            -- end, { silent = true, buffer = true, desc = 'Code Actions' })
+            vim.keymap.set('n', '<leader>crr', function()
+              vim.cmd.RustLsp 'run'
+            end, { silent = true, buffer = true, desc = 'Run under cursor' })
+            vim.keymap.set('n', '<leader>crR', function()
+              vim.cmd.RustLsp 'runnables'
+            end, { silent = true, buffer = true, desc = 'List runnables' })
+            vim.keymap.set('n', '<leader>crT', function()
+              vim.cmd.RustLsp 'testables'
+            end, { silent = true, buffer = true, desc = 'List testables' })
+            vim.keymap.set('n', '<leader>crt', function()
+              vim.cmd.RustLsp { 'testables', bang = true }
+            end, { silent = true, buffer = true, desc = 'Rerun last test' })
+            vim.keymap.set('n', '<leader>cro', function()
+              vim.cmd.RustLsp 'openCargo'
+            end, { silent = true, buffer = true, desc = 'Open Cargo.toml' })
+            vim.keymap.set('n', '<leader>cre', function()
+              vim.cmd.RustLsp 'explainError'
+            end, { silent = true, buffer = true, desc = 'Explain next error' })
+            vim.keymap.set('n', '<leader>crd', function()
+              vim.cmd.RustLsp 'renderDiagnostic'
+            end, { silent = true, buffer = true, desc = 'Explain next diagnostic' })
+            vim.keymap.set('n', '<leader>crD', function()
+              vim.cmd.RustLsp 'openDocs'
+            end, { silent = true, buffer = true, desc = 'Open on docs.rs' })
+            vim.keymap.set('n', '<leader>crp', function()
+              vim.cmd.RustLsp 'parentModule'
+            end, { silent = true, buffer = true, desc = 'Go to parent module' })
+            vim.keymap.set('n', 'J', function()
+              vim.cmd.RustLsp 'joinLines'
+            end, { silent = true, buffer = true, desc = 'Go to parent module' })
+          end,
+        },
       }
+
       vim.api.nvim_create_autocmd('FileType', {
         group = vim.api.nvim_create_augroup('RustInlayHints', { clear = true }),
         pattern = 'rust',
