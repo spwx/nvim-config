@@ -12,6 +12,7 @@ return {
         { '<leader>cx', group = 'trouble' },
         { '<leader>t', group = 'telescope' },
         { '<leader>b', group = 'buffer' },
+        { '<leader>n', group = 'org-mode', icon = { icon = '', hl = 'WhichKeyGreen', color = 'green' } },
         { '<leader>o', group = 'obsidian', icon = { icon = '󰯂', hl = 'WhichKeyPurple', color = 'purple' } },
         { '<leader>g', group = 'git', icon = { icon = '󰊢', hl = 'WhichKeyColorOrange', color = 'orange' } },
         {

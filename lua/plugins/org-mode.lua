@@ -18,6 +18,9 @@ return {
       org_startup_indented = true,
       -- make org-mode work with nvim-ufo
       org_startup_folded = 'inherit',
+      mappings = {
+        prefix = '<leader>n',
+      },
     }
 
     -- NOTE: If you are using nvim-treesitter with ~ensure_installed = "all"~ option
