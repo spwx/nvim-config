@@ -4,6 +4,10 @@ vim.g.maplocalleader = ' '
 
 vim.g.have_nerd_font = true
 
+if vim.g.neovide then
+  require 'neovide'
+end
+
 require 'options'
 require 'keymaps'
 require 'config.lazy'
