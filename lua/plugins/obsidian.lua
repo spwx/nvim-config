@@ -30,14 +30,16 @@ return {
     -- remove line breaks
     { '<leader>ox', ':w<Home>silent <End> !pandoc -f gfm+wikilinks_title_after_pipe -t gfm --wrap=none | pbcopy<cr>', desc = 'Export to GFM', mode = 'v' },
   },
-  ft = 'markdown',
+  -- ft = 'markdown',
   -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
-  -- event = {
-  --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
-  --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
-  --   "BufReadPre path/to/my-vault/**.md",
-  --   "BufNewFile path/to/my-vault/**.md",
-  -- },
+  event = {
+    --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+    --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
+    'BufReadPre '
+      .. vim.fn.expand '~'
+      .. 'Documents/vault/**.md',
+    'BufNewFile ' .. vim.fn.expand '~' .. 'Documents/vault/**.md',
+  },
   dependencies = {
     -- Required.
     'nvim-lua/plenary.nvim',
@@ -94,6 +96,7 @@ return {
     end,
     -- Optional, set to true to force ':ObsidianOpen' to bring the app to the foreground.
     open_app_foreground = true,
+    ui = { enable = false },
   },
   init = function()
     vim.api.nvim_create_autocmd('FileType', {

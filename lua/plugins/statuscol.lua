@@ -69,7 +69,7 @@ return {
           -- add an extra column for Nerd Fonts fold glyphs
           -- { text = { ' ' }, hl = 'FoldColumn' },
           {
-            sign = { text = { '💡' }, maxwidth = 1, colwidth = 2, auto = true, wrap = false },
+            sign = { text = { '💡' }, maxwidth = 1, colwidth = 2, auto = false, wrap = false },
           },
           -- {
           --   sign = { namespace = { 'diagnostic/signs' }, maxwidth = 1, auto = false },
