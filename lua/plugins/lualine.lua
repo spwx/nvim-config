@@ -6,7 +6,9 @@ return {
       section_separators = { left = '', right = '' },
       component_separators = { left = '', right = '' },
     },
+
     sections = {
+      lualine_a = { { 'mode', separator = { left = '' }, icon = '' } },
       lualine_c = {
         {
           'filename',
@@ -14,6 +16,9 @@ return {
             return { fg = vim.bo.modified and '#fabd2f' or nil, gui = 'bold' }
           end,
         },
+      },
+      lualine_z = {
+        { 'location', separator = { right = '' } },
       },
     },
   },
