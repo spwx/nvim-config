@@ -63,4 +63,10 @@ vim.keymap.set('n', '<leader>wj', '<c-w><c-j>', { desc = 'Focus lower window' })
 vim.keymap.set('n', '<leader>wk', '<c-w><c-k>', { desc = 'Focus upper window' })
 vim.keymap.set('n', '<leader>wo', '<C-w><C-o>', { desc = 'Current window only' })
 
+-- https://old.reddit.com/r/neovim/comments/ys8are/how_would_i_do_this_in_lua/ivxrj76/
+local expr_options = { expr = true, silent = true }
+--Remap for dealing with visual line wraps
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", expr_options)
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", expr_options)
+
 -- vim: ts=2 sts=2 sw=2 et
