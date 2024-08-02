@@ -66,4 +66,6 @@ vim.o.foldlevelstart = 99
 vim.o.foldmethod = 'expr'
 vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 
+-- TODO: Style fold lines: https://old.reddit.com/r/neovim/comments/16xz3q9/treesitter_highlighted_folds_are_now_in_neovim/
+--
 -- vim: ts=2 sts=2 sw=2 et
