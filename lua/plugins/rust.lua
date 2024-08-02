@@ -23,14 +23,6 @@ return {
               { '<leader>cr', group = 'rustaceanvim' },
             }
 
-            -- you can also put keymaps in here
-            -- TODO: this isn't working
-            -- vim.cmd.RustLsp { 'flyCheck', 'run' }
-            -- TODO: Something is wrong with `ui_select_fallback`
-            -- vim.keymap.set('n', '<leader>ca', function()
-            --   vim.cmd.RustLsp 'codeAction' -- supports rust-analyzer's grouping
-            --   -- or vim.lsp.buf.codeAction() if you don't want grouping.
-            -- end, { silent = true, buffer = true, desc = 'Code Actions' })
             vim.keymap.set('n', '<leader>crr', function()
               vim.cmd.RustLsp 'run'
             end, { silent = true, buffer = true, desc = 'Run under cursor' })
