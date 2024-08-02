@@ -69,4 +69,7 @@ local expr_options = { expr = true, silent = true }
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", expr_options)
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", expr_options)
 
+-- HACK: work around for bubbles
+vim.keymap.set('n', '<leader>wf', '<cmd>set bg=dark<cr>', { desc = 'Set backdround dark' })
+
 -- vim: ts=2 sts=2 sw=2 et
