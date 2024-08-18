@@ -59,4 +59,10 @@ return {
       -- vim.cmd.hi 'Comment gui=none'
     end,
   },
+  {
+    'eldritch-theme/eldritch.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
 }
